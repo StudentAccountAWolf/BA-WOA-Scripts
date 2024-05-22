@@ -15,7 +15,6 @@ nan_excluded = None
 def plot_data(df):
     global selected_column, transformation, nan_excluded
     if selected_column in df.columns:
-        print(nan_excluded)
         # Überprüfen, ob die Spalte bereits numerische Werte enthält
         if pd.api.types.is_numeric_dtype(df[selected_column]):
             pass
@@ -27,12 +26,13 @@ def plot_data(df):
         counts = df.groupby('Species_GrowthType')[selected_column].nunique()
         
         if nan_excluded == "True":
-            print(nan_excluded)
             df = df.dropna(subset=[selected_column, 'Species_GrowthType'])   # Entferne Zeilen mit NaN-Werten in den relevanten Spalten
 
         if transformation == "log10":
             df[selected_column] = np.log10(df[selected_column])
-        elif transformation == "sqrt":
+        elif transformation == "ln":
+            df[selected_column] = np.log(df[selected_column])
+        elif transformation == "(x)^2":
             df[selected_column] = np.sqrt(df[selected_column])
 
         # Ein neues Fenster für das Boxplot erstellen
@@ -42,14 +42,19 @@ def plot_data(df):
 
         ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform', pad=15, fontweight="bold")
         ax.set_xlabel('Species (Growth type)', labelpad=16, fontsize = 12, fontweight="bold")
-        if transformation == 'sqrt':
-            ax.set_ylabel(f'Square Root of {selected_column}', labelpad=24, fontsize = 12, fontweight="bold")
-        elif transformation == 'log10':
-            ax.set_ylabel(f'Logarithm Base 10 of {selected_column}', labelpad=24, fontsize = 12, fontweight="bold")
+        if transformation == '(x)^2':
+            ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform - Transformation = Quadratwurzel', pad=15, fontweight="bold")
+            ax.set_ylabel(f'{selected_column} - (x)^2', labelpad=24, fontsize = 12, fontweight="bold")
+        elif transformation == 'log(10)':
+            ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform - Transformation = Logarithmus(10)', pad=15, fontweight="bold")
+            ax.set_ylabel(f'{selected_column} - log(10)', labelpad=24, fontsize = 12, fontweight="bold")
+        elif transformation == 'log(e)':
+            ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform - Transformation = Logarithmus(e)', pad=15, fontweight="bold")
+            ax.set_ylabel(f'{selected_column} - log(e)', labelpad=24, fontsize = 12, fontweight="bold")
         else:
             ax.set_ylabel(selected_column, labelpad=24, fontsize = 11, fontweight="bold")
 
-        fig.canvas.manager.set_window_title(f'Boxplot von {selected_column} [transformation = {transformation}] nach Spezies und Wuchsform')  # Set window title to selected column name
+        fig.canvas.manager.set_window_title(f'Boxplot von {selected_column} [Transformation = {transformation}] nach Spezies und Wuchsform')  # Set window title to selected column name
 
         axis = plt.gca()
         x_labels = [item.get_text() for item in axis.get_xticklabels()]
@@ -90,7 +95,7 @@ def select_column_and_transformation(columns):
 
     label2 = tk.Label(frame, text="Transformation:", font=("Helvetica", 12))
     label2.grid(row=0, column=0, padx=(10, 10))
-    transformation_selected = ttk.Combobox(frame, values=["None", "log10", "sqrt"], width=15)
+    transformation_selected = ttk.Combobox(frame, values=["None", "log(10)", "log(e)", "(x)^2"], width=15)
     transformation_selected.grid(row=0, column=1)
     transformation_selected.current(0)
 
@@ -108,13 +113,15 @@ def select_column_and_transformation(columns):
 def show_column_values(column_name_1, values_1, column_name_2, values_2):
     global transformation
     values_window = tk.Toplevel()  # Ein neues Toplevel-Fenster erstellen
-    values_window.title(f"{column_name_2} [transformation = {transformation}]")
+    values_window.title(f"{column_name_2} [Transformation = {transformation}]")
     if transformation == None:
-        values_window.title("Daten")
-    elif transformation == "log10":
-        values_window.title("Daten (log10)")
-    elif transformation == "sqrt":
-        values_window.title("Daten (sqrt)")
+        values_window.title(f"{column_name_2}")
+    elif transformation == "log(10)":
+        values_window.title(f"{column_name_2} (log(10))")
+    elif transformation == "ln":
+        values_window.title(f"{column_name_2} (log(e))")
+    elif transformation == "(x)^2":
+        values_window.title(f"{column_name_2} ((x)^2)")
 
     tree = ttk.Treeview(values_window, columns=(column_name_1, column_name_2), show="headings")
     tree.heading(column_name_1, text=column_name_1)
