@@ -8,10 +8,14 @@ import numpy as np
 
 selected_column = None
 transformation = None
+nan_excluded = None
+
+# df.dropna(subset=[selected_column, 'Species_GrowthType'], inplace=True)   # Entferne Zeilen mit NaN-Werten in den relevanten Spalten
 
 def plot_data(df):
-    global selected_column, transformation
+    global selected_column, transformation, nan_excluded
     if selected_column in df.columns:
+        print(nan_excluded)
         # Überprüfen, ob die Spalte bereits numerische Werte enthält
         if pd.api.types.is_numeric_dtype(df[selected_column]):
             pass
@@ -21,6 +25,10 @@ def plot_data(df):
         df['Species_GrowthType'] = df['WOA_Species'] + ' (' + df['WOA_GrowthType'] + ')'
 
         counts = df.groupby('Species_GrowthType')[selected_column].nunique()
+        
+        if nan_excluded == "True":
+            print(nan_excluded)
+            df = df.dropna(subset=[selected_column, 'Species_GrowthType'])   # Entferne Zeilen mit NaN-Werten in den relevanten Spalten
 
         if transformation == "log10":
             df[selected_column] = np.log10(df[selected_column])
@@ -32,19 +40,23 @@ def plot_data(df):
         sns.boxplot(x='Species_GrowthType', y=selected_column, data=df, showfliers=False, ax=ax)
         sns.stripplot(x='Species_GrowthType', y=selected_column, data=df, color='black', alpha=0.6, jitter=True, ax=ax)
 
-        ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform', pad=15)
-        ax.set_xlabel('Species (Growth type)', labelpad=16, fontsize = 12)
+        ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform', pad=15, fontweight="bold")
+        ax.set_xlabel('Species (Growth type)', labelpad=16, fontsize = 12, fontweight="bold")
         if transformation == 'sqrt':
-            ax.set_ylabel(f'Square Root of {selected_column}', labelpad=24, fontsize = 12)
+            ax.set_ylabel(f'Square Root of {selected_column}', labelpad=24, fontsize = 12, fontweight="bold")
         elif transformation == 'log10':
-            ax.set_ylabel(f'Logarithm Base 10 of {selected_column}', labelpad=24, fontsize = 12)
+            ax.set_ylabel(f'Logarithm Base 10 of {selected_column}', labelpad=24, fontsize = 12, fontweight="bold")
         else:
-            ax.set_ylabel(selected_column, labelpad=24, fontsize = 12)
+            ax.set_ylabel(selected_column, labelpad=24, fontsize = 11, fontweight="bold")
 
         fig.canvas.manager.set_window_title(f'Boxplot von {selected_column} [transformation = {transformation}] nach Spezies und Wuchsform')  # Set window title to selected column name
 
-        plt.setp(ax.get_xticklabels(), rotation=40, ha='right')  # Horizontal Alignment für Ticklabels einstellen
-        fig.set_size_inches(1920/100, 1080/100)
+        axis = plt.gca()
+        x_labels = [item.get_text() for item in axis.get_xticklabels()]
+        new_labels = [f'{label} [N = {counts[label]}]' for label in x_labels]   # Anfügen von Samplecount an Beschriftung
+        axis.set_xticks(np.arange(len(new_labels)))     # 'Ticks' setzen um Matlibplot zufriedenzustellen, da manuelle änderungen an den Labels gemacht werden
+        axis.set_xticklabels(new_labels, rotation=40, ha='right', fontweight="bold")  # Horizontal Alignment für Ticklabels einstellen
+        fig.set_size_inches(1600/100, 1200/100)
         fig.tight_layout()
 
         show_column_values('Species_GrowthType', df['Species_GrowthType'].tolist(), selected_column, df[selected_column].tolist())
@@ -56,15 +68,16 @@ def plot_data(df):
 
 # ------------------ Tkinter Funktionen für Auswahl und Ausgabe ------------------ 
 def select_column_and_transformation(columns):
-    global selected_column, transformation
+    global selected_column, transformation, nan_excluded
     root = tk.Tk()
     root.title("Spalten- und Transformationsauswahl")
-    root.geometry('450x300')
+    root.geometry('550x250')
 
     def on_confirm():
-        global selected_column, transformation
+        global selected_column, transformation, nan_excluded
         selected_column = column_selected.get()
         transformation = transformation_selected.get()
+        nan_excluded = nan_selected.get()
         plot_data(df)
 
     label1 = tk.Label(root, text="Spalte:", font=("Helvetica", 12))
@@ -72,15 +85,25 @@ def select_column_and_transformation(columns):
     column_selected = ttk.Combobox(root, values=columns, width=60)
     column_selected.pack(pady=10)
 
-    label2 = tk.Label(root, text="Transformation:", font=("Helvetica", 12))
-    label2.pack(pady=(20, 10))
-    transformation_selected = ttk.Combobox(root, values=["None", "log10", "sqrt"], width=15)
-    transformation_selected.pack(pady=10)
+    frame = tk.Frame(root)
+    frame.pack(pady=(20, 10))
+
+    label2 = tk.Label(frame, text="Transformation:", font=("Helvetica", 12))
+    label2.grid(row=0, column=0, padx=(10, 10))
+    transformation_selected = ttk.Combobox(frame, values=["None", "log10", "sqrt"], width=15)
+    transformation_selected.grid(row=0, column=1)
     transformation_selected.current(0)
+
+    label3 = tk.Label(frame, text="NaN ausklammern:", font=("Helvetica", 12))
+    label3.grid(row=0, column=2, padx=(10, 10))
+    nan_selected = ttk.Combobox(frame, values=["False", "True"], width=15)
+    nan_selected.grid(row=0, column=3)
+    nan_selected.current(0)
 
     tk.Button(root, text="Bestätigen", command=on_confirm).pack(pady=10)
 
     root.mainloop()
+# -------------------------------------------------------------------------------- 
 
 def show_column_values(column_name_1, values_1, column_name_2, values_2):
     global transformation
