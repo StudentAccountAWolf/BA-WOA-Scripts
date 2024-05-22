@@ -33,7 +33,7 @@ def plot_data(df):
             df_temp[selected_column] = np.log10(df_temp[selected_column])
         elif transformation == "log(e)":
             df_temp[selected_column] = np.log(df_temp[selected_column])
-        elif transformation == "(x)^1/2":
+        elif transformation == "(x)^0.5":
             df_temp[selected_column] = np.sqrt(df_temp[selected_column])
 
         # Ein neues Fenster für das Boxplot erstellen
@@ -43,9 +43,9 @@ def plot_data(df):
 
         ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform', pad=15, fontweight="bold")
         ax.set_xlabel('Species (Growth type)', labelpad=16, fontsize = 12, fontweight="bold")
-        if transformation == '(x)^1/2':
+        if transformation == '(x)^0.5':
             ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform - Transformation = Quadratwurzel', pad=15, fontweight="bold")
-            ax.set_ylabel(f'{selected_column} - (x)^1/2', labelpad=24, fontsize = 12, fontweight="bold")
+            ax.set_ylabel(f'{selected_column} - (x)^0.5', labelpad=24, fontsize = 12, fontweight="bold")
         elif transformation == 'log(10)':
             ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform - Transformation = Logarithmus(10)', pad=15, fontweight="bold")
             ax.set_ylabel(f'{selected_column} - log(10)', labelpad=24, fontsize = 12, fontweight="bold")
@@ -96,7 +96,7 @@ def select_column_and_transformation(columns):
 
     label2 = tk.Label(frame, text="Transformation:", font=("Helvetica", 12))
     label2.grid(row=0, column=0, padx=(10, 10))
-    transformation_selected = ttk.Combobox(frame, values=["None", "log(10)", "log(e)", "(x)^1/2"], width=15)
+    transformation_selected = ttk.Combobox(frame, values=["None", "log(10)", "log(e)", "(x)^0.5"], width=15)
     transformation_selected.grid(row=0, column=1)
     transformation_selected.current(0)
 
@@ -121,8 +121,8 @@ def show_column_values(column_name_1, values_1, column_name_2, values_2):
         values_window.title(f"{column_name_2} (log(10))")
     elif transformation == "ln":
         values_window.title(f"{column_name_2} (log(e))")
-    elif transformation == "(x)^1/2":
-        values_window.title(f"{column_name_2} ((x)^1/2)")
+    elif transformation == "(x)^0.5":
+        values_window.title(f"{column_name_2} ((x)^0.5)")
 
     tree = ttk.Treeview(values_window, columns=(column_name_1, column_name_2), show="headings")
     tree.heading(column_name_1, text=column_name_1)
