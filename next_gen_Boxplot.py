@@ -14,31 +14,32 @@ nan_excluded = None
 
 def plot_data(df):
     global selected_column, transformation, nan_excluded
-    if selected_column in df.columns:
+    df_temp = df.copy()
+    if selected_column in df_temp.columns:
         # Überprüfen, ob die Spalte bereits numerische Werte enthält
-        if pd.api.types.is_numeric_dtype(df[selected_column]):
+        if pd.api.types.is_numeric_dtype(df_temp[selected_column]):
             pass
         else:
-            df[selected_column] = pd.to_numeric(df[selected_column].str.replace(',', '.'), errors='coerce')
+            df_temp[selected_column] = pd.to_numeric(df_temp[selected_column].str.replace(',', '.'), errors='coerce')
 
-        df['Species_GrowthType'] = df['WOA_Species'] + ' (' + df['WOA_GrowthType'] + ')'
+        df_temp['Species_GrowthType'] = df_temp['WOA_Species'] + ' (' + df_temp['WOA_GrowthType'] + ')'
 
-        counts = df.groupby('Species_GrowthType')[selected_column].nunique()
+        counts = df_temp.groupby('Species_GrowthType')[selected_column].nunique()
         
         if nan_excluded == "True":
-            df = df.dropna(subset=[selected_column, 'Species_GrowthType'])   # Entferne Zeilen mit NaN-Werten in den relevanten Spalten
+            df_temp = df_temp.dropna(subset=[selected_column, 'Species_GrowthType'])   # Entferne Zeilen mit NaN-Werten in den relevanten Spalten
 
-        if transformation == "log10":
-            df[selected_column] = np.log10(df[selected_column])
-        elif transformation == "ln":
-            df[selected_column] = np.log(df[selected_column])
+        if transformation == "log(10)":
+            df_temp[selected_column] = np.log10(df_temp[selected_column])
+        elif transformation == "log(e)":
+            df_temp[selected_column] = np.log(df_temp[selected_column])
         elif transformation == "(x)^2":
-            df[selected_column] = np.sqrt(df[selected_column])
+            df_temp[selected_column] = np.sqrt(df_temp[selected_column])
 
         # Ein neues Fenster für das Boxplot erstellen
         fig, ax = plt.subplots()
-        sns.boxplot(x='Species_GrowthType', y=selected_column, data=df, showfliers=False, ax=ax)
-        sns.stripplot(x='Species_GrowthType', y=selected_column, data=df, color='black', alpha=0.6, jitter=True, ax=ax)
+        sns.boxplot(x='Species_GrowthType', y=selected_column, data=df_temp, showfliers=False, ax=ax)
+        sns.stripplot(x='Species_GrowthType', y=selected_column, data=df_temp, color='black', alpha=0.6, jitter=True, ax=ax)
 
         ax.set_title(f'Boxplot von {selected_column} nach Spezies und Wuchsform', pad=15, fontweight="bold")
         ax.set_xlabel('Species (Growth type)', labelpad=16, fontsize = 12, fontweight="bold")
@@ -64,7 +65,7 @@ def plot_data(df):
         fig.set_size_inches(1600/100, 1200/100)
         fig.tight_layout()
 
-        show_column_values('Species_GrowthType', df['Species_GrowthType'].tolist(), selected_column, df[selected_column].tolist())
+        show_column_values('Species_GrowthType', df_temp['Species_GrowthType'].tolist(), selected_column, df_temp[selected_column].tolist())
         plt.show()
 
     else:
