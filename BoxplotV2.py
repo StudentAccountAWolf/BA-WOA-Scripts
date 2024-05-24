@@ -9,11 +9,13 @@ import numpy as np
 selected_column = None
 transformation = None
 nan_excluded = None
+show_data = False
+
 
 # df.dropna(subset=[selected_column, 'Species_GrowthType'], inplace=True)   # Entferne Zeilen mit NaN-Werten in den relevanten Spalten
 
 def plot_data(df):
-    global selected_column, transformation, nan_excluded
+    global selected_column, transformation, nan_excluded, show_data
     df_temp = df.copy()
     if selected_column in df_temp.columns:
         # Überprüfen, ob die Spalte bereits numerische Werte enthält
@@ -65,7 +67,9 @@ def plot_data(df):
         fig.set_size_inches(1600/100, 1200/100)
         fig.tight_layout()
 
-        show_column_values('Species_GrowthType', df_temp['Species_GrowthType'].tolist(), selected_column, df_temp[selected_column].tolist())
+        if show_data == "True":
+            show_column_values('Species_GrowthType', df_temp['Species_GrowthType'].tolist(), selected_column, df_temp[selected_column].tolist())
+
         plt.show()
 
     else:
@@ -74,16 +78,17 @@ def plot_data(df):
 
 # ------------------ Tkinter Funktionen für Auswahl und Ausgabe ------------------ 
 def select_column_and_transformation(columns):
-    global selected_column, transformation, nan_excluded
+    global selected_column, transformation, nan_excluded, show_data
     root = tk.Tk()
     root.title("Spalten- und Transformationsauswahl")
-    root.geometry('550x250')
+    root.geometry('550x280')  # Erhöhe die Höhe des Fensters für die Checkbox
 
     def on_confirm():
-        global selected_column, transformation, nan_excluded
+        global selected_column, transformation, nan_excluded, show_data
         selected_column = column_selected.get()
         transformation = transformation_selected.get()
         nan_excluded = nan_selected.get()
+        show_data = show_data_selected.get()
         plot_data(df)
 
     label1 = tk.Label(root, text="Spalte:", font=("Helvetica", 12))
@@ -106,9 +111,23 @@ def select_column_and_transformation(columns):
     nan_selected.grid(row=0, column=3)
     nan_selected.current(0)
 
+    # Checkbox zum Anzeigen der Daten hinzufügen
+    label4 = tk.Label(frame, text="Daten anzeigen:", font=("Helvetica", 12))
+    label4.grid(row=2, column=2, padx=(29, 10))
+    show_data_selected = ttk.Combobox(frame, values=["False", "True"], width=15)
+    show_data_selected.grid(row=2, column=3)
+    show_data_selected.current(0)
+
+
+
+    # show_data = tk.BooleanVar()  # Variable für den Zustand der Checkbox
+    # show_data_checkbox = tk.Checkbutton(root, text=" - Show data", variable=show_data, font=("Helvetica", 12))
+    # show_data_checkbox.pack(pady=(0, 10))
+
     tk.Button(root, text="Bestätigen", command=on_confirm).pack(pady=10)
 
     root.mainloop()
+
 # -------------------------------------------------------------------------------- 
 
 def show_column_values(column_name_1, values_1, column_name_2, values_2):
