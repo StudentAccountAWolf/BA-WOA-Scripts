@@ -1,0 +1,9 @@
+Species,Species_short,LeafLength,LeafLength (sqrt),LeafWidth,LeafArea,LeafArea (log10),LeafVolume,LeafVolume (log10),LeafCellLength,LeafCellLength (log10),LeafCellWidth,LeafCellWidth (log10),LeafCellArea,LeafCellArea (log10),LeafCellVolume,LeafCellVolume (log10),"LeafDryMassPerArea (None, sqrt)","LeafDryMassPerArea (log, log10)",VegetativePlantHeight,VegetativePlantHeight (log10),LeafDryMatterContent,FreshLeafBiomass (log10),DryLeafBiomass (log10),PlantFreshBiomassWhole (log10),PlantDryBiomassWhole (log10),FreshStemBiomass (log10),DryStemBiomass (log10),LeafLength (log10),LeafWidth (log10)
+Grimmia pulvinata,G. pulvinata,D,CE,B,B,B,C,C,C,B,D,F,B,C,B,C,BC,BC,D,C,C,CD,BC,B,C,B,B,B,F
+Plagiomnium undulatum (female),P. undulatum (f),B,B,A,A,A,B,A,B,A,B,B,A,A,A,A,B,C,C,B,A,A,A,A,A,A,A,A,B
+Plagiomnium undulatum (male),P. undulatum (m),A,A,A,A,A,A,A,B,A,A,A,D,E,C,D,CD,BD,AB,AB,A,A,A,A,AB,AD,A,A,A
+Bryum sp.,Bryum sp.,CD,DE,CD,B,C,C,D,D,CD,C,E,C,D,C,D,CD,CD,E,D,AB,B,B,B,CD,CD,CD,CD,E
+Homalothecium lutescens,H. lutescens,CD,CE,B,B,B,B,C,D,C,E,CD,AB,B,B,C,A,A,BC,B,C,C,BC,A,A,AD,A,C,CD
+Brachythecium rutabulum,B. rutabulum,CD,DE,CD,B,C,C,D,E,E,DE,FG,D,E,C,D,E,E,E,D,BC,CD,C,B,BCD,CD,CD,E,FG
+Rhytidiadelphus squarrosus,R. squarrosus,C,D,D,B,C,C,B,A,D,DE,DG,A,A,B,B,AD,AD,AC,B,C,BD,BC,A,AD,D,AD,D,DG
+Hypnum cupressiforme,H. cupressiforme,D,C,BC,B,B,B,BC,D,CD,E,C,AB,B,B,BC,AD,AD,AE,AD,C,CD,BC,B,BCD,BC,BC,CD,C
