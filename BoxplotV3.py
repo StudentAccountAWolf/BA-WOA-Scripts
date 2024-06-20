@@ -6,7 +6,7 @@ from tkinter import filedialog, ttk
 import numpy as np
 import sys
 
-# Globala Variablen
+# Globale Variablen
 selected_column = None
 transformation = None
 nan_excluded = None
@@ -110,7 +110,7 @@ def select_settings(columns, hoc_columns):
     root.title("Spalten- und Transformationsauswahl")
     root.geometry('550x340')  # Skalierung des Fensters für die Auswahl
 
-    # Alle Daten die bei Bestätigung an die plot Funktion geschickt werden
+    # Alle Daten die bei Bestätigung an die plot Funktion geschickt werden 
     def on_confirm():
         global selected_column, transformation, nan_excluded, show_data, y_position, selected_hoc_column
         selected_column = column_selected.get()

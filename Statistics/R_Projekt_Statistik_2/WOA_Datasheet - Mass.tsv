@@ -1,0 +1,74 @@
+WOA_weight_Species_Plant_specification	WOA_Species	WOA_Species_short	WOA_GrowthType	WOA_VegetativePlantLength_WeightMeasurements.[mm]	WOA_LeafCount	WOA_FreshLeavesBiomass.[mg]	WOA_DryLeavesBiomass.[mg]	WOA_LeavesBiomassDelta	WOA_LeavesBiomassDelta.[%]	WOA_FreshLeafBiomass.[mg]	WOA_DryLeafBiomass.[mg]	WOA_PlantFreshBiomassWhole.[mg]	WOA_PlantDryBiomassWhole.[mg]	WOA_PlantFreshStemBiomass.[mg]	WOA_PlantDryStemBiomass.[mg]	WOA_BiomassDelta.[mg]	WOA_BiomassDeltaPercentage.[%]	WOA_LeafDryMatterContent.[mg g^-1]	WOA_IncubationTimeInHeat.[min]	WOA_IncubationHeat.[K]	WOA_DateOfMeasurement
+WOA_weight_Plagiomnium.undulatum_f_Plant1_Leaves	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp	54.14								21.04	11.37			9.67	45.96		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_Plant2_Leaves	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp	55.91								33.80	16.66			17.14	50.71		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_Plant3_Leaves	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp	66.00								44.25	18.22			26.03	58.82		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_Plant1_noLeaves	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp	55.38								40.38		8.55	7.88	0.67	1.66		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_Plant2_noLeaves	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp	51.76								109.09		20.30	15.56	4.74	4.35		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_Plant3_noLeaves	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp	40.03								78.61		19.38	6.38	13.00	16.54		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_onlyLeaves1	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp		30	54.04	6.39	47.65	88.18	1.80133	0.21300					47.65	88.18	118.25	60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_onlyLeaves2	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp		30	48.70	3.91	44.79	91.97	1.62333	0.13033					44.79	91.97	80.29	60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_f_onlyLeaves3	Plagiomnium undulatum (female)	P. undulatum (f)	apocarp		30	80.39	4.63	75.76	94.24	2.67967	0.15433					75.76	94.24	57.59	60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant1_Leaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	66.34								32.32	8.83			23.49	72.68		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant2_Leaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	34.14								12.04	4.83			7.21	59.88		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant3_Leaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	37.89								68.55	6.83			61.72	90.04		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant4_Leaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	25.76								17.58	2.58			15.00	85.32		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant1_noLeaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	38.54								43.97		13.21	7.40	5.81	13.21		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant2_noLeaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	35.59								15.41		4.68	2.22	2.46	15.96		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_Plant3_noLeaves	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp	41.28								13.76		5.41	2.84	2.57	18.68		60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_onlyLeaves1	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp		30	52.00	4.30	47.70	91.73	1.73333	0.14333					47.70	91.73	82.69	60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_onlyLeaves2	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp		30	27.33	2.45	24.88	91.04	0.91107	0.08167					24.88	91.04	89.64	60	313.15	22.04.2024
+WOA_weight_Plagiomnium.undulatum_m_onlyLeaves3	Plagiomnium undulatum (male)	P. undulatum (m)	apocarp		30	44.90	2.69	42.21	94.01	1.49667	0.08967					42.21	94.01	59.91	60	313.15	22.04.2024
+WOA_weight_Bryum.sp._Plant1_Leaves	Bryum sp.	Bryum sp.	apocarp	25.06								6.20	1.61			4.59	74.03		60	313.15	24.04.2024
+WOA_weight_Bryum.sp._Plant2_Leaves	Bryum sp.	Bryum sp.	apocarp	31.84								3.55	0.68			2.87	80.85		60	313.15	24.04.2024
+WOA_weight_Bryum.sp._Plant3_Leaves	Bryum sp.	Bryum sp.	apocarp	28.74								8.19	1.26			6.93	84.62		60	313.15	24.04.2024
+WOA_weight_Bryum.sp._Plant1_noLeaves	Bryum sp.	Bryum sp.	apocarp	27.70								4.54		0.77	0.72	0.05	1.10		60	313.15	24.04.2024
+WOA_weight_Bryum.sp._Plant2_noLeaves	Bryum sp.	Bryum sp.	apocarp	25.39								2.60		1.63	0.48	1.15	44.23		60	313.15	24.04.2024
+WOA_weight_Bryum.sp._Plant3_noLeaves	Bryum sp.	Bryum sp.	apocarp	30.53								5.33		3.62	0.85	2.77	51.97		60	313.15	24.04.2024
+WOA_weight_Bryum.sp._onlyLeaves1	Bryum sp.	Bryum sp.	apocarp		50	1.29	0.23	1.06	82.17	0.02580	0.00460					1.06	82.17	178.29	60	313.15	24.04.2024
+WOA_weight_Bryum.sp._onlyLeaves2	Bryum sp.	Bryum sp.	apocarp		50	3.06	1.25	1.81	59.15	0.06120	0.02500					1.81	59.15	408.50	60	313.15	24.04.2024
+WOA_weight_Bryum.sp._onlyLeaves3	Bryum sp.	Bryum sp.	apocarp		50	3.37	1.06	2.31	68.55	0.06740	0.02120					2.31	68.55	314.54	60	313.15	24.04.2024
+WOA_weight_Homalothecium.lutescens_Plant1_Leaves	Homalothecium lutescens	H. lutescens	pleurocarp	36.8								47.20	13.82			33.38	70.72		60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_Plant2_Leaves	Homalothecium lutescens	H. lutescens	pleurocarp	22.96								13.83	5.97			7.86	56.83		60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_Plant3_Leaves	Homalothecium lutescens	H. lutescens	pleurocarp	37.08								9.65	7.92			1.73	17.93		60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_Plant1_noLeaves	Homalothecium lutescens	H. lutescens	pleurocarp	39.92								21.66		10.81	7.66	3.15	14.54		60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_Plant2_noLeaves	Homalothecium lutescens	H. lutescens	pleurocarp	27.5								25.52		9.93	3.16	6.77	26.53		60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_Plant3_noLeaves	Homalothecium lutescens	H. lutescens	pleurocarp	34.11								7.66		2.94	2.34	0.60	7.83		60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_onlyLeaves1	Homalothecium lutescens	H. lutescens	pleurocarp		60	0.57	0.41	0.16	28.07	0.00950	0.00683					0.16	28.07	719.30	60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_onlyLeaves2	Homalothecium lutescens	H. lutescens	pleurocarp		60	0.48	0.3	0.18	37.50	0.00800	0.00500					0.18	37.50	625.00	60	313.15	29.04.2024
+WOA_weight_Homalothecium.lutescens_onlyLeaves3	Homalothecium lutescens	H. lutescens	pleurocarp		60	0.21	0.17	0.04	19.05	0.00350	0.00283					0.04	19.05	809.52	60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_Plant1_Leaves	Brachythecium rutabulum	B. rutabulum	pleurocarp	18.23								1.34	0.97			0.37	27.61		60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_Plant2_Leaves	Brachythecium rutabulum	B. rutabulum	pleurocarp	26.84								6.61	3.22			3.39	51.29		60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_Plant3_Leaves	Brachythecium rutabulum	B. rutabulum	pleurocarp	17.55								2.48	1.62			0.86	34.68		60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_Plant1_noLeaves	Brachythecium rutabulum	B. rutabulum	pleurocarp	16.52								6.91		3.92	1.33	2.59	37.48		60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_Plant2_noLeaves	Brachythecium rutabulum	B. rutabulum	pleurocarp	19.57								1.81		1.78	0.4	1.38	76.24		60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_Plant3_noLeaves	Brachythecium rutabulum	B. rutabulum	pleurocarp	18.54								1.8		1.5	0.58	0.92	51.11		60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_onlyLeaves1	Brachythecium rutabulum	B. rutabulum	pleurocarp		70	0.54	0.29	0.25	46.30	0.00771	0.00414					0.25	46.30	537.04	60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_onlyLeaves2	Brachythecium rutabulum	B. rutabulum	pleurocarp		70	0.48	0.22	0.26	54.17	0.00686	0.00314					0.26	54.17	458.33	60	313.15	29.04.2024
+WOA_weight_Brachythecium.rutabulum_onlyLeaves3	Brachythecium rutabulum	B. rutabulum	pleurocarp		70	0.57	0.34	0.23	40.35	0.00814	0.00486					0.23	40.35	596.49	60	313.15	29.04.2024
+WOA_weight_Hypnum_cupressiforme_Plant1_Leaves	Hypnum cupressiforme	R. squarrosus	pleurocarp	26.19								5.7	2.14			3.56	62.46		60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_Plant2_Leaves	Hypnum cupressiforme	R. squarrosus	pleurocarp	28.91								5.03	1.72			3.31	65.81		60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_Plant3_Leaves	Hypnum cupressiforme	R. squarrosus	pleurocarp	17.5								2.35	0.93			1.42	60.43		60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_Plant1_noLeaves	Hypnum cupressiforme	R. squarrosus	pleurocarp	31.43								7.8		0.58	0.53	0.05	0.64		60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_Plant2_noLeaves	Hypnum cupressiforme	R. squarrosus	pleurocarp	21.81								1.23		0.65	0.51	0.14	11.38		60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_Plant3_noLeaves	Hypnum cupressiforme	R. squarrosus	pleurocarp	20.32								9.28		0.53	0.38	0.15	1.62		60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_onlyLeaves1	Hypnum cupressiforme	R. squarrosus	pleurocarp		60	0.41	0.35	0.06	14.63	0.00683	0.00583					0.06	14.63	853.66	60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_onlyLeaves2	Hypnum cupressiforme	R. squarrosus	pleurocarp		60	0.67	0.38	0.29	43.28	0.01117	0.00633					0.29	43.28	567.16	60	313.15	06.05.2024
+WOA_weight_Hypnum_cupressiforme_onlyLeaves3	Hypnum cupressiforme	R. squarrosus	pleurocarp		60	0.63	0.33	0.3	47.62	0.01050	0.00550					0.30	47.62	523.81	60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_Plant1_Leaves	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp	36.53								18.26	1.78			16.48	90.25		60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_Plant2_Leaves	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp	38.77								40.32	7.18			33.14	82.19		60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_Plant3_Leaves	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp	33.55								29.29	6.24			23.05	78.70		60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_Plant1_noLeaves	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp	51.07								27.35		2.77	2.34	0.43	1.57		60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_Plant2_noLeaves	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp	48.4								19.79		1.99	1.82	0.17	0.86		60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_Plant3_noLeaves	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp	54.26								37.61		4.27	3.75	0.52	1.38		60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_onlyLeaves1	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp		50	1.29	0.8	0.49	37.98	0.02580	0.01600					0.49	37.98	620.16	60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_onlyLeaves2	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp		50	0.77	0.45	0.32	41.56	0.01540	0.00900					0.32	41.56	584.42	60	313.15	06.05.2024
+WOA_weight_Rhytidiadelphus_squarrosus_onlyLeaves3	Rhytidiadelphus squarrosus	H. cupressiforme	pleurocarp		50	0.86	0.7	0.16	18.60	0.01720	0.01400					0.16	18.60	813.95	60	313.15	06.05.2024
+WOA_weight_Grimmia_pulvinata_Plant1_Leaves	Grimmia pulvinata	G. pulvinata	apocarp	7.99								2.69	0.69			2.00	74.35		60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_Plant2_Leaves	Grimmia pulvinata	G. pulvinata	apocarp	11.67								3.19	1			2.19	68.65		60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_Plant3_Leaves	Grimmia pulvinata	G. pulvinata	apocarp	11.64								3.83	1.26			2.57	67.10		60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_Plant1_noLeaves	Grimmia pulvinata	G. pulvinata	apocarp	9.91								3.08		0.23	0.13	0.10	3.25		60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_Plant2_noLeaves	Grimmia pulvinata	G. pulvinata	apocarp	9.76								3.05		0.18	0.07	0.11	3.61		60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_Plant3_noLeaves	Grimmia pulvinata	G. pulvinata	apocarp	12.48								5.64		0.3	0.26	0.04	0.71		60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_onlyLeaves1	Grimmia pulvinata	G. pulvinata	apocarp		50	0.66	0.56	0.1	15.15	0.01320	0.01120					0.10	15.15	848.48	60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_onlyLeaves2	Grimmia pulvinata	G. pulvinata	apocarp		50	0.63	0.55	0.08	12.70	0.01260	0.01100					0.08	12.70	873.02	60	313.15	07.05.2024
+WOA_weight_Grimmia_pulvinata_onlyLeaves3	Grimmia pulvinata	G. pulvinata	apocarp		50	1.03	0.5	0.53	51.46	0.02060	0.01000					0.53	51.46	485.44	60	313.15	07.05.2024

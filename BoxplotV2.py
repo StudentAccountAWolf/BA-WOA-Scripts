@@ -26,7 +26,7 @@ def plot_data(df):
             df_temp[selected_column] = pd.to_numeric(df_temp[selected_column].str.replace(',', '.'), errors='coerce')
 
         # Extras für X-Achse
-        df_temp['Species_GrowthType'] = df_temp['WOA_Species'] + ' (' + df_temp['WOA_GrowthType'] + ')' # Erstelle neue Spalte um auf X-Achse Spezies und Wuchsform anzeigen zu können
+        df_temp['Species_GrowthType'] = df_temp['WOA_Species'] + ' (' + df_temp['WOA_GrowthType'] + ')'# + ' - ' + df_temp['WOA_LeafCellShape'] # Erstelle neue Spalte um auf X-Achse Spezies und Wuchsform anzeigen zu können
         counts = df_temp.groupby('Species_GrowthType')[selected_column].nunique()   # Einfachen Zähler um Samplesize auf X-Achse anzeigen zu können
         
         # Entfernen von NaN Werten um übersichtlichere Blots zu bauen
@@ -43,7 +43,7 @@ def plot_data(df):
 
         # Ein neues Fenster für das Boxplot erstellen
         fig, ax = plt.subplots()    # Erzeuge eine neue Figur und ein Axes-Objekt zum Zeichnen
-        sns.boxplot(x='Species_GrowthType', y=selected_column, data=df_temp, showfliers=True, ax=ax) # showfliers=True: Anzeige von Ausreißern (outliers) im Boxplot | ax=ax: Verwendet das zuvor erstellte Axes-Objekt zum Zeichnen des Boxplots
+        sns.boxplot(x='Species_GrowthType', y=selected_column, data=df_temp, showfliers=True, ax=ax) # showfliers=True: Anzeige von Ausreißern (outliers) im Boxplot als leere Kreise | ax=ax: Verwendet das zuvor erstellte Axes-Objekt zum Zeichnen des Boxplots
         sns.stripplot(x='Species_GrowthType', y=selected_column, data=df_temp, color='black', alpha=0.6, jitter=True, ax=ax)    # Erstellt ein Stripplot über dem Boxplot | jitter=True erzeugt Datenpunkte willkürlich auf einer Ebene um sie besser erkennen zu können
 
         # Allgemeine Beschriftungen von Titel bis Achsen
@@ -64,7 +64,7 @@ def plot_data(df):
         fig.canvas.manager.set_window_title(f'Boxplot von {selected_column} [Transformation = {transformation}] nach Spezies und Wuchsform')  # Set window title to selected column name
 
         axis = plt.gca()    # Zugriff auf Achse
-        x_labels = [item.get_text() for item in axis.get_xticklabels()] # Nimmt jede X-achsenbeschriftung und speichert sie in x_labels
+        x_labels = [item.get_text() for item in axis.get_xticklabels()] # Nimmt jede X-Achsenbeschriftung und speichert sie in x_labels
         new_labels = [f'{label} [N = {counts[label]}]' for label in x_labels]   # Anfügen von Samplecount an jede Beschriftung der X-Achse
         axis.set_xticks(np.arange(len(new_labels)))     # Position der neuen Beschriftungen auf der X-Achse setzen
         axis.set_xticklabels(new_labels, rotation=40, ha='right', fontweight="bold")  # Horizontal Alignment für Ticklabels einstellen
